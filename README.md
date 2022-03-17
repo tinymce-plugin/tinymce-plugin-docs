@@ -1,2 +1,2 @@
-# tinymce-plugin-doc
-tinymce-plugin-doc 
+# tinymce-plugin-docs
+tinymce-plugin-docs
