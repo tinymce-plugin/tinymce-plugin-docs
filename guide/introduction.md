@@ -8,6 +8,7 @@
   <div class="vueDemo">
     <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
   </div>
+  <div  v-html="content"></div>
 </div>
 </template>
 
@@ -38,140 +39,199 @@ data(){
 ```
 :::
 
+:::tinymce-react sdsdwewe  
+```html
+<script>
+//https://babeljs.io/repl/
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-:::tinymce-vue3 哈市大
+  class TodoApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { items: [], text: '' };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>TODO</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="new-todo">
+            What needs to be done?
+          </label>
+          <input
+            id="new-todo"
+            onChange={this.handleChange}
+            value={this.state.text}
+          />
+          <button>
+            Add #{this.state.items.length + 1}
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+  handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.state.text.length === 0) {
+      return;
+    }
+    const newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState(state => ({
+      items: state.items.concat(newItem),
+      text: ''
+    }));
+  }
+}
+
+class TodoList extends React.Component {
+  render() {
+    return (
+      <ul>
+        {this.props.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+ReactDOM.render(
+  <TodoApp />,
+  document.getElementById('todosexample')
+);
+
+</script>
+```
+:::
+
+
+
+:::tinymce-react sdsdwewe  
+```html
+<script>
+//https://babeljs.io/repl/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
+import { Editor } from '@tinymce/tinymce-react';
+
+     class ReactDemo extends React.Component{
+       constructor(props) {
+         super(props);
+           this.reactDemoInit = {
+                    height: 500,
+                    base_url:'/tinymce',
+                    branding: false,
+                    language:'zh_CN',
+                    menubar: false,
+                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen indent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount'],
+                    toolbar: 'undo redo indent2em autoresize tpCollapse tpTabs tpButtons | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+             };
+           this.reactDemoInitialValue = "<p>这是一个REactDemo</p>"
+        }
+      render(){
+        return (
+           <div>
+            <h1>tinymce demo2</h1>
+            <Editor initialValue={this.reactDemoInitialValue} init={this.reactDemoInit} />
+          </div>
+          );
+      }
+    }
+
+   ReactDOM.render(<ReactDemo />, document.getElementById('ReactRootID'));
+</script>
+```
+:::
+
+:::tinymce-vue2  sdsVuwDFSDF AFAJSHDJKASHFJKHSAJKHFJAHFKJDAHFJKSDHFKJHSDJKFHDKSJHJKHXCHVUISADFHAUIDHFUIA 
 ```vue
 <template>
 <div>
- <h1>插件demovuw3展示区域</h1>
+ <h1>插件demo展示区域</h1>
   <div class="vueDemo">
     <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
   </div>
+  <div v-html="content"></div>
 </div>
 </template>
 
 <script>
 import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
 import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue.vue";
+import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
 export default{
-name: 'domeVue3',
+name: 'domeVue2',
 components: { TinymceVue },
 data(){
     return {
-        content: 'dsdsdssfddddddddddddddsaddddddddddd=+++++dddddsd',
+        content: 'fivesdsdsd',
         tinymceOptions:{
-                // custom_elements: 'tp-collapse',
-                min_height: 500,
+                min_height: 200,
                 max_height: 700,
                 base_url:'/tinymce',
-                plugins: 'tp code  indent2em autoresize tpCollapse  preview',
-                toolbar: ['|code indent2em  tpCollapse | Preview |'],
+                plugins: 'tp code  indent2em autoresize tpCollapse tpTabs tpButtons image   preview',
+                toolbar: ['|code indent2em  tpCollapse tpTabs tpButtons   | Preview | w'],
              
         }
     }
   }
 }
 </script>
-
 ```
 :::
+
 ```js
-import React from 'react';
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-import { Editor } from '@tinymce/tinymce-react';
-```
-:::tinymce-react sdsd  
-```html
+<template>
 <div>
  <h1>插件demo展示区域</h1>
-  <div id="ReactRootID" >
-   
+  <div class="vueDemo">
+    <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
   </div>
+  <div v-html="content"></div>
 </div>
-<script>
-//https://babeljs.io/repl/
-import React from 'react';
-import ReactDOM from 'react-dom';
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-import { Editor } from '@tinymce/tinymce-react';
-
-     class reactDemo extends React.Component{
-       constructor(props) {
-         super(props);
-           this.reactDemoInit = {
-                    height: 500,
-                    base_url:'/tinymce',
-                    branding: false,
-                    language:'zh_CN',
-                    menubar: false,
-                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen indent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'undo redo indent2em autoresize tpCollapse tpTabs tpButtons | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-             };
-           this.reactDemoInitialValue ="<p>这是一个REactDemo</p>"
-        }
-      render() {
-        return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "tinymce demo"), /*#__PURE__*/React.createElement(Editor, {
-                  initialValue: this.reactDemoInitialValue,
-                  init: this.reactDemoInit
-          }));
-        }
-    }
-
-   ReactDOM.render(React.createElement(reactDemo,null), document.getElementById('ReactRootID'));
-</script>
-```
-:::
-
-
-
-:::tinymce-react 232323
-```html
+</template>
 
 <script>
-//https://babeljs.io/repl/
-import React from 'react';
-import ReactDOM from 'react-dom';
 import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
 import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-import { Editor } from '@tinymce/tinymce-react';
-
-     class reactDemo extends React.Component{
-       constructor(props) {
-         super(props);
-           this.reactDemoInit = {
-                    height: 500,
-                    base_url:'/tinymce',
-                    branding: false,
-                    language:'zh_CN',
-                    menubar: false,
-                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen indent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'undo redo indent2em autoresize tpCollapse tpTabs tpButtons | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-             };
-           this.reactDemoInitialValue ="<p>这是一个REactDemo3</p>"
-        }
-      render() {
-        return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "tinymce demo"), /*#__PURE__*/React.createElement(Editor, {
-                  initialValue: this.reactDemoInitialValue,
-                  init: this.reactDemoInit
-          }));
+import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+export default{
+name: 'domeVue2',
+components: { TinymceVue },
+data(){
+    return {
+        content: 'fivesdsdsd',
+        tinymceOptions:{
+                min_height: 200,
+                max_height: 700,
+                base_url:'/tinymce',
+                plugins: 'tp code  indent2em autoresize tpCollapse tpTabs tpButtons image   preview',
+                toolbar: ['|code indent2em  tpCollapse tpTabs tpButtons   | Preview | w'],
+             
         }
     }
-
-   ReactDOM.render(React.createElement(reactDemo,null), document.getElementById('ReactRootID'));
+  }
+}
 </script>
 ```
-:::
 
-
-
-    
-
-:::tinymce-vue2  sdsVuw 
+:::tinymce-vue2 sdsVuwDFSDF 
 ```vue
 <template>
 <div>
@@ -179,13 +239,14 @@ import { Editor } from '@tinymce/tinymce-react';
   <div class="vueDemo">
     <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
   </div>
+  <div v-html="content"></div>
 </div>
 </template>
 
 <script>
-// import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-// import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-// import TinymceVue2 from "/@/example/vueDemo/Tinymce-vue2.vue";
+import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
+import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
