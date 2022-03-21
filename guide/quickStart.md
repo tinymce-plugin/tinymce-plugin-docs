@@ -1,4 +1,9 @@
+---
+title: 快速上手2
+---
 ## 快速上手
+啊傻瓜大家奥古斯
+dasd
 :::tinymce-react sdsd  
 ```html
 <div>
