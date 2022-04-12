@@ -17,6 +17,8 @@ title: 贡献插件
   <!-- <script src='./api/api.js'></script> -->
   
   <script src='/tinymce/tinymce.js'></script><!-- 必要 -->
+  <script src='/tinymce/tinymce-plugin.js'></script><!-- 必要 -->
+
   <style>
     body{max-width: 1920px; min-width: 900px;width: 100%; margin: 0 auto;}
     header{}
