@@ -2,7 +2,7 @@
 title: 快速上手
 ---
 ## 快速上手
-:::tinymce-react 
+:::tinymce-react  test
 ```html
 <div>
  <h1>插件demo展示区域</h1>
