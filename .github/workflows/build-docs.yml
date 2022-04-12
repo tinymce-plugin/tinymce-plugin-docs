@@ -20,6 +20,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install --legacy-peer-deps
+          npm run build:site
           npm run build
       - name: Deploy
         env:
