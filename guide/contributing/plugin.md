@@ -4,7 +4,7 @@ title: 贡献插件
 # 贡献插件
 ## 如何贡献一个插件
 
-:::tinymce 
+:::tinymce test 
 ```html
 <!DOCTYPE html>
 <html>
