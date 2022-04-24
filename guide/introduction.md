@@ -14,7 +14,9 @@
 
 <script>
 import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
+import tinymcePlugin from "@npkg/tinymce-plugin";
+import "@npkg/tinymce-plugin/tpIndent2em";
+import "@npkg/tinymce-plugin/tpImportword";
 import TinymceVue from "/@/example/vueDemo/Tinymce-vue.vue";
 export default{
 name: 'domeVue3',
@@ -27,8 +29,8 @@ data(){
                 min_height: 200,
                 max_height: 700,
                 base_url:'/tinymce',
-                plugins: 'tp code  indent2em autoresize tpCollapse tpTabs tpButtons  preview',
-                toolbar: ['|code indent2em  tpCollapse tpTabs tpButtons   | Preview |'],
+                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
+                toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
              
         }
     }
@@ -44,6 +46,7 @@ data(){
 <script>
 //https://babeljs.io/repl/
 import React from 'react';
+
 import ReactDOM from 'react-dom';
 
   class TodoApp extends React.Component {
@@ -126,7 +129,9 @@ ReactDOM.render(
 import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
+import tinymcePlugin from "@npkg/tinymce-plugin";
+import "@npkg/tinymce-plugin/tpIndent2em";
+import "@npkg/tinymce-plugin/tpImportword";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -138,8 +143,8 @@ import { Editor } from '@tinymce/tinymce-react';
                     branding: false,
                     language:'zh_CN',
                     menubar: false,
-                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen indent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'undo redo indent2em autoresize tpCollapse tpTabs tpButtons | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
+                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen tpIndent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount tpImportword'],
+                    toolbar: 'undo redo tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
              };
            this.reactDemoInitialValue = "<p>这是一个REactDemo</p>"
@@ -148,7 +153,9 @@ import { Editor } from '@tinymce/tinymce-react';
         return (
            <div>
             <h1>tinymce demo2</h1>
+            <div>
             <Editor initialValue={this.reactDemoInitialValue} init={this.reactDemoInit} />
+            </div>
           </div>
           );
       }
@@ -158,78 +165,6 @@ import { Editor } from '@tinymce/tinymce-react';
 </script>
 ```
 :::
-
-:::tinymce-vue2  sdsVuwDFSDF AFAJSHDJKASHFJKHSAJKHFJAHFKJDAHFJKSDHFKJHSDJKFHDKSJHJKHXCHVUISADFHAUIDHFUIA 
-```vue
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div v-html="content"></div>
-</div>
-</template>
-
-<script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
-export default{
-name: 'domeVue2',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'fivesdsdsd',
-        tinymceOptions:{
-                min_height: 200,
-                max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  indent2em autoresize tpCollapse tpTabs tpButtons image   preview',
-                toolbar: ['|code indent2em  tpCollapse tpTabs tpButtons   | Preview | w'],
-             
-        }
-    }
-  }
-}
-</script>
-```
-:::
-
-```js
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div v-html="content"></div>
-</div>
-</template>
-
-<script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
-export default{
-name: 'domeVue2',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'fivesdsdsd',
-        tinymceOptions:{
-                min_height: 200,
-                max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  indent2em autoresize tpCollapse tpTabs tpButtons image   preview',
-                toolbar: ['|code indent2em  tpCollapse tpTabs tpButtons   | Preview | w'],
-             
-        }
-    }
-  }
-}
-</script>
-```
 
 :::tinymce-vue2 sdsVuwDFSDF 
 ```vue
@@ -245,7 +180,9 @@ data(){
 
 <script>
 import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tp$ from "/@/assets/lib/tinymce-vue/tinymce-plugin/tinymce-plugin";
+import tinymcePlugin from "@npkg/tinymce-plugin";
+import "@npkg/tinymce-plugin/tpIndent2em";
+import "@npkg/tinymce-plugin/tpImportword";
 import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
 export default{
 name: 'domeVue2',
@@ -257,8 +194,8 @@ data(){
                 min_height: 200,
                 max_height: 700,
                 base_url:'/tinymce',
-                plugins: 'tp code  indent2em autoresize tpCollapse tpTabs tpButtons image   preview',
-                toolbar: ['|code indent2em  tpCollapse tpTabs tpButtons   | Preview | w'],
+                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image  tpImportword preview',
+                toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
              
         }
     }
