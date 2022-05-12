@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         MESSAGEDATA: ${{ github.event.head_commit.message }}
-        HEADCOMMITDATA: ${{ github.event }}
+        HEADCOMMITDATA: ${{ github.event.head_commit.message  }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
