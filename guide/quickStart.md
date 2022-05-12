@@ -1,90 +1,89 @@
+# 快速上手
 ---
-title: 快速上手
----
-## 快速上手
-:::tinymce-react  test
+## 下载安装
+
+ 同时更新维护 [*_**tinymce-plugin**_*](https://www.npmjs.com/package/tinymce-plugin) 和 [*_**@npkg/tinymce-plugin**_*](https://www.npmjs.com/package/@npkg/tinymce-plugin) 中。（二者同步）
+
+### CDN
+
 ```html
-<div>
- <h1>插件demo展示区域</h1>
-  <div id="ReactRootID" >
-   
-  </div>
-</div>
-<script>
-//https://babeljs.io/repl/
-import React from 'react';
-import ReactDOM from 'react-dom';
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tinymcePlugin from "@npkg/tinymce-plugin";
-import "@npkg/tinymce-plugin/tpIndent2em";
-import "@npkg/tinymce-plugin/tpImportword";
-import { Editor } from '@tinymce/tinymce-react';
-
-     class reactDemo extends React.Component{
-       constructor(props) {
-         super(props);
-           this.reactDemoInit = {
-                    min_height: 200,
-                    base_url:'/tinymce',
-                    branding: false,
-                    language:'zh_CN',
-                    menubar: false,
-                    plugins: ['advlist autolink lists link image charmap print tpImportword preview anchor', 'searchreplace visualblocks code fullscreen indent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount'],
-                    toolbar: 'undo redo indent2em autoresize tpCollapse tpTabs tpButtons | formatselect image tpImportword | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-                    skeletonScreen: true
-             };
-           this.reactDemoInitialValue ="<p>这是一个REactDemo</p>"
-        }
-      render() {
-        return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, ""), /*#__PURE__*/React.createElement(Editor, {
-                  initialValue: this.reactDemoInitialValue,
-                  init: this.reactDemoInit
-          }));
-        }
-    }
-
-   ReactDOM.render(React.createElement(reactDemo,null), document.getElementById('ReactRootID'));
-</script>
+<script src="https://unpkg.com/tinymce-plugin"></script>
 ```
+或
+```html
+<script src="https://unpkg.com/@npkg/tinymce-plugin"></script>
+```
+
+
+### NPM
+
+
+
+<codeGroup>
+ <codeGroupItem title="NPM" active>
+
+```sh
+npm i tinymce-plugin 或 npm i @npkg/tinymce-plugin 
+```
+</codeGroupItem>
+<codeGroupItem title="YARN">
+
+```sh
+yarn add tinymce-plugin -D 或 yarn add @npkg/tinymce-plugin -D
+```
+</codeGroupItem>
+</codeGroup>
+
+或
+
+
+### 自行下载
+
+这些文件可以在 [*_**unpkg**_*](https://unpkg.com/browse/tinymce-plugin/) 或者[*_**jsDelivr**_*](https://cdn.jsdelivr.net/npm/tinymce-plugin/)  这些 CDN 上浏览和下载,自行存放
+
+## 使用
+
+### 引入
+
+- 没有构建工具
+
+```html
+<script src="https://unpkg.com/@npkg/tinymce-plugin"></script>
+```
+- 使用构建工具
+
+```js
+ import "tinymce-plugin";
+```
+### 开启骨架屏（skeletonScreen）
+
+通过配置参数 **`skeletonScreen`** 来开启 [`tinymce`](https://www.tiny.cloud) 富文本框编辑器的骨架屏功能 ，改善 [`tinymce`](https://www.tiny.cloud) 富文本编辑器加载过长用户体验不佳
+:::tip 提示
+ 要使用 **`skeletonScreen`** 必须 引入  [**tinymce-plugin**](https://www.npmjs.com/package/tinymce-plugin) 或 [**@npkg/tinymce-plugin**](https://www.npmjs.com/package/@npkg/tinymce-plugin)
 :::
 
-:::tinymce-vue2 sdsVuwDFSDF 
-```vue
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div v-html="content"></div>
-</div>
-</template>
-
-<script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tinymcePlugin from "@npkg/tinymce-plugin";
-import "@npkg/tinymce-plugin/tpIndent2em";
-import "@npkg/tinymce-plugin/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
-export default{
-name: 'domeVue2',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'fivesdsdsd',
-        tinymceOptions:{
-                min_height: 200,
-                max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image preview',
-                toolbar: ['code tpIndent2em tpCollapse tpTabs tpButtons Preview'],
-                skeletonScreen: true,
-             
-        }
-    }
-  }
-}
-</script>
+```js {4}
+import "tinymce-plugin"; 
+tinymce.init({
+  ...
+  skeletonScreen: true,
+  ...
+})
 ```
-:::
+使用效果
+![skeletonScreen](assets/images/skt-demo.png?100%)
+### 引入使用收录的插件或扩展
+
+```js
+import "tinymce-plugin"; //作为一些插件的必要依赖
+import "tinymce-plugin/plugins/tpIndent2em";
+import "tinymce-plugin/plugins/tpLayout";
+import "tinymce-plugin/plugins/tpImportword";
+```
+或
+```js
+import "@npkg/tinymce-plugin"; //作为一些插件的必要依赖
+import "@npkg/tinymce-plugin/plugins/tpIndent2em";
+import "@npkg/tinymce-plugin/plugins/tpLayout";
+import "@npkg/tinymce-plugin/plugins/tpImportword";
+```

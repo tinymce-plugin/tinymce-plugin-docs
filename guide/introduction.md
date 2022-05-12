@@ -1,206 +1,71 @@
-# 前言
+---
+title: 前言
+---
 
-:::tinymce-vue3 哈市大家啊实打实大苏打好看就好看啊速度很快按时打卡实打实哈开始大师的话看阿松大啊大苏打
-```vue
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div  v-html="content"></div>
-</div>
-</template>
+# **👋 Welcome !**
+---
 
-<script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tinymcePlugin from "@npkg/tinymce-plugin";
-import "@npkg/tinymce-plugin/tpIndent2em";
-import "@npkg/tinymce-plugin/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue.vue";
-export default{
-name: 'domeVue3',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'dsdsdssfdddddddddddddddddddsd',
-        tinymceOptions:{
-                // custom_elements: 'tp-collapse',
-                min_height: 200,
-                max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
-                toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
-             
-        }
-    }
-  }
-}
-</script>
+> 欢迎来到 [**`Tinymce-plugin`** ](https://github.com/tinymce-plugin)
+>
+>这是一个专注 提供 **强大、好用、丰富** 的 [`tinymce`](https://www.tiny.cloud) 富文本编辑器 **插件**、**扩展** 和 **技术** 的技术社区，方便 **交流讨论**，**分享经验** 。
+> 
+> 本社区有多个不错的插件或者项目，欢迎 Star ⭐ 关注~
+>
 
-```
-:::
 
-:::tinymce-react sdsdwewe  
-```html
-<script>
-//https://babeljs.io/repl/
-import React from 'react';
 
-import ReactDOM from 'react-dom';
+# [✨ Tinymce-plugin ](https://github.com/tinymce-plugin/tinymce-plugin)
+---
 
-  class TodoApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { items: [], text: '' };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+[![tinymce-plugin](https://tinymce-plugin.github.io/badge.svg)](https://github.com/tinymce-plugin)&nbsp;
+[![release candidate](https://img.shields.io/npm/v/tinymce-plugin.svg)](https://www.npmjs.com/package/tinymce-plugin)&nbsp;
+[![tinymce Version](https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg)](https://www.tiny.cloud)&nbsp; 
+[![GitHub license](https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg)](https://github.com/tinymce-plugin/tp-indent2em/blob/main/LICENSE)&nbsp;
+[![tinymce Version](https://img.shields.io/npm/dm/@npkg/tinymce-plugins)](https://www.tiny.cloud)
+:::tip
 
-  render() {
-    return (
-      <div>
-        <h3>TODO</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="new-todo">
-            What needs to be done?
-          </label>
-          <input
-            id="new-todo"
-            onChange={this.handleChange}
-            value={this.state.text}
-          />
-          <button>
-            Add #{this.state.items.length + 1}
-          </button>
-        </form>
-      </div>
-    );
-  }
+**Tinymce-plugin 社区 所有稳定插件 将收录在 [**tinymce-plugin**](https://www.npmjs.com/package/tinymce-plugin) 和 [**@npkg/tinymce-plugin**](https://www.npmjs.com/package/@npkg/tinymce-plugin) 中。（二者同步）**
 
-  handleChange(e) {
-    this.setState({ text: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    if (this.state.text.length === 0) {
-      return;
-    }
-    const newItem = {
-      text: this.state.text,
-      id: Date.now()
-    };
-    this.setState(state => ({
-      items: state.items.concat(newItem),
-      text: ''
-    }));
-  }
-}
-
-class TodoList extends React.Component {
-  render() {
-    return (
-      <ul>
-        {this.props.items.map(item => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
-    );
-  }
-}
-
-ReactDOM.render(
-  <TodoApp />,
-  document.getElementById('todosexample')
-);
-
-</script>
-```
 :::
 
 
+🚀 表示已经实现的功能
 
-:::tinymce-react sdsdwewe  
-```html
-<script>
-//https://babeljs.io/repl/
-import React from 'react';
-import ReactDOM from 'react-dom';
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tinymcePlugin from "@npkg/tinymce-plugin";
-import "@npkg/tinymce-plugin/tpIndent2em";
-import "@npkg/tinymce-plugin/tpImportword";
-import { Editor } from '@tinymce/tinymce-react';
+👷 表示进行中的功能
 
-     class ReactDemo extends React.Component{
-       constructor(props) {
-         super(props);
-           this.reactDemoInit = {
-                    height: 500,
-                    base_url:'/tinymce',
-                    branding: false,
-                    language:'zh_CN',
-                    menubar: false,
-                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen tpIndent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount tpImportword'],
-                    toolbar: 'undo redo tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-             };
-           this.reactDemoInitialValue = "<p>这是一个REactDemo</p>"
-        }
-      render(){
-        return (
-           <div>
-            <h1>tinymce demo2</h1>
-            <div>
-            <Editor initialValue={this.reactDemoInitialValue} init={this.reactDemoInit} />
-            </div>
-          </div>
-          );
-      }
-    }
+⏳ 表示规划中的功能
 
-   ReactDOM.render(<ReactDemo />, document.getElementById('ReactRootID'));
-</script>
-```
+💡 想法
+
+📝 计划
+
+ 但是🥇🥈🥉🏅🎖🏆🔥
+ 
+:::warning 
+### 注意
+旧版包 [~~**`@npkg/tinymce-plugins`**~~](https://www.npmjs.com/package/@npkg/tinymce-plugins) 停止维护
+
+由[**`tinymce-plugin`**](https://www.npmjs.com/package/tinymce-plugin) 和 [**`@npkg/tinymce-plugin`**](https://www.npmjs.com/package/@npkg/tinymce-plugin) 替代
+
 :::
 
-:::tinymce-vue2 sdsVuwDFSDF 
-```vue
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :options="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div v-html="content"></div>
-</div>
-</template>
 
-<script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import tinymcePlugin from "@npkg/tinymce-plugin";
-import "@npkg/tinymce-plugin/tpIndent2em";
-import "@npkg/tinymce-plugin/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
-export default{
-name: 'domeVue2',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'fivesdsdsd',
-        tinymceOptions:{
-                min_height: 200,
-                max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image  tpImportword preview',
-                toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
-             
-        }
-    }
-  }
-}
-</script>
-```
-:::
+# 🙋‍♂️ 加入社区
+---
+
+如果你正在使用tinymce，不妨加入 Tinymce-plugin 组织，和我们一起维护发展，共同成长。可以通过以下两种方式加入：
+
+- 直接在这个 [_***issue***_](https://github.com/tinymce-plugin/tinymce-plugin.github.io/issues/3) 上评论，告知我们你想加入 tinymce-plugin。
+- 发送邮件到 [**fivecc@qq.com**](mailto:fivecc@qq.com?Subject=加入Tinymce-plugin社区组织)，写明你的 GitHub ID，如 five-great。
+默认情况下，在你加入我们之后，你作为 GitHub tinymce-plugin 组织成员的信息是处于隐藏状态的。如果你希望在你的个人 GitHub 资料页上展示 tinymce-plugin 组织，你可以在 [*_**Tinymce-plugin People**_*](https://github.com/orgs/tinymce-plugin/people) 处将你的信息从 private “私有”改为 public “公开”。当然，我们推荐设置为公开。
+
+# 💬 交流讨论
+---
+
+欢迎加入 [*_**`qq交流群 143085779`**_*](https://jq.qq.com/?_wv=1027&k=JgsnIlUw)
+![qq群二维码](/qq.png#pic_center)
+
+[贡献插件](/contributing/writing-guide#首行缩进(增强版))
+
+
+---
