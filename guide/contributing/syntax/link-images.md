@@ -1,6 +1,7 @@
 ---
 title: 链接与图片
 ---
+[[toc]]
 ## 关于外链
 ---
 1. [外部链接样式1](https://www.npmjs.com/package/tinymce-plugin) ( 写法: \[外部链接样式1\]\(https://www.npmjs.com/package/tinymce-plugin\) )

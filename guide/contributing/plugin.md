@@ -3,7 +3,6 @@ title: 贡献插件
 ---
 # 贡献插件
 ## 如何贡献一个插件
-
 :::tinymce
 ```html
 <!DOCTYPE html>
@@ -40,7 +39,6 @@ title: 贡献插件
 </head>
 
 <body tp-page-height="498">
-      <h1>全部魔改项目</h1>
       <div class="demo">
         <div id="tinymce-app">
             <div class="tinymce-demo" style="color: #000;">
@@ -57,15 +55,6 @@ title: 贡献插件
             </div>
         </div>
       </div>
-      <!-- <a class="btn" onclick="savefun()" >点击保存显示</a> -->
-      <!-- <div>
-         <h1>展示区域</h1>
-         <div id="showID">
-             <h2 class="text-center" >点击保存后富文本框中内容将在此处显示</h2>
-         </div>
-     </div> -->
-     <!-- <div style="height: 60px;"></div> -->
-
   <script>
     function savefun(){
       $("#showID").html(tinymceConfig.getHtml())
@@ -180,7 +169,7 @@ title: 贡献插件
                     $.ajax({
                         data: data,
                         type: 'GET',
-                        url: './api/file.json',
+                        url: '/tinymce/api/file.json',
                         cache: false,
                         contentType: false,
                         processData: false,
@@ -200,7 +189,7 @@ title: 贡献插件
                  },
                  tp_attachment_max_size: 5009715200,
                 //  attachment_style: '.attachment>img{display:inline-block!important;max-width:30px!important;}',
-                 tp_attachment_assets_path: './plugins/attachment/icons',
+                 tp_attachment_assets_path: '/tinymce/plugins/attachment/icons',
                 
               
                  init_instance_callback: function(editor){
@@ -210,74 +199,7 @@ title: 贡献插件
                   //    editor.focus();
                  }
           }).then(function(res){
-                 tinymce.feedBackIframeUrl ='./plugins/help/docBox.html'; //反馈链接
-                 tinymceConfig.setFCHtml = function(html){//设置功能介绍Html
-                    tinymce.functionHtml = html;
-                  } 
-                 tinymceConfig.setOMHtml = function(html){//设置操作手册Html
-                    tinymce.OperationManualHtml = html;
-                  } 
-                  tinymceConfig.setCPHtml = function(html){//设置疑难问答Html
-                    tinymce.CommonProblemHtml = html;
-                  }
-                  tinymceConfig.getHtml = function getHtml(){
-                      let _html = tinyMCE.editors[tinymceConfig.tinyID].getContent();
-                    return _html;
-                   }
-				  
-                  tinymceConfig.setHtml = function setHtml(html){
-                      return tinyMCE.editors[tinymceConfig.tinyID].setContent(html);
-                  }
-                  $.ajax({
-                    type: "GET",
-                    url: "./api/setFChtml.json",
-                    async: true,
-                    dataType: "json",
-                    success: function(data) {
-                       data.data?tinymceConfig.setFCHtml(data.data) : '';//设置功能介绍
-                    },
-                    error:function () {
-                    }
-                  })
-                  $.ajax({
-                    type: "GET",
-                    url: "./api/setList.json",
-                    async: true,
-                    dataType: "json",
-                    success: function(data) {
-                      let temHtml=data.data
-                      temHtml? tinymceConfig.setOMHtml(temHtml) : ''
-                    }
-                  })
-                      $.ajax({
-                        type: "GET",
-                        url: "./api/setCP.json",
-                        async: true,
-                        dataType: "json",
-                        success: function(data) {
-                          tinymceConfig.setCPHtml(data.data);//设置疑难问答
-                          let _html = $("#"+tinymceConfig.tinyID).html();
-                             if(_html&&_html.indexOf('<div id="fvContentID">')!=-1){
-                                 _html = _html.match(/<div id="fvContentID">([\s\S]*)<\/div>/)[1];
-                             }
-                             _html?tinymceConfig.setHtml(_html):''
-                        },
-                        error:function () {
-                        }
-                      })
-                      //
-                //公告栏
-                 $.ajax({
-                    type: "GET",
-                    url: "./api/setGG.json",
-                    async: true,
-                    dataType: "json",
-                    success: function(data) {
-                           $("#tinymce-app").prepend('<div><p style="margin: 5px;">【公告栏】</p>'+data.data+'</div>')
-                    },
-                    error:function () {
-                    }
-                  })
+                 tinymce.feedBackIframeUrl ='/tinymce/plugins/help/docBox.html'; //反馈链接
              });
   </script>
 </body>
@@ -285,4 +207,3 @@ title: 贡献插件
 
 ```
 :::
-

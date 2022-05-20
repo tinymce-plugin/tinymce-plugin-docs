@@ -1,7 +1,6 @@
 ---
 title: 前言
 ---
-
 # **👋 Welcome !**
 ---
 
@@ -14,7 +13,7 @@ title: 前言
 
 
 
-# [✨ Tinymce-plugin ](https://github.com/tinymce-plugin/tinymce-plugin)
+# ✨Tinymce-plugin
 ---
 
 [![tinymce-plugin](https://tinymce-plugin.github.io/badge.svg)](https://github.com/tinymce-plugin)&nbsp;
@@ -29,7 +28,7 @@ title: 前言
 :::
 
 
-🚀 表示已经实现的功能
+<!--🚀 表示已经实现的功能
 
 👷 表示进行中的功能
 
@@ -39,7 +38,7 @@ title: 前言
 
 📝 计划
 
- 但是🥇🥈🥉🏅🎖🏆🔥
+ 但是🥇🥈🥉🏅🎖🏆🔥-->
  
 :::warning 
 ### 注意
@@ -62,10 +61,14 @@ title: 前言
 # 💬 交流讨论
 ---
 
-欢迎加入 [*_**`qq交流群 143085779`**_*](https://jq.qq.com/?_wv=1027&k=JgsnIlUw)
-![qq群二维码](/qq.png#pic_center)
+- 欢迎前往 [*_**Discussions**_*](https://github.com/tinymce-plugin/tinymce-plugin.github.io/discussions) 上参与讨论或咨询问题。
 
-[贡献插件](/contributing/writing-guide#首行缩进(增强版))
+- 欢迎加入 [*_**`qq交流群 143085779`**_*](https://jq.qq.com/?_wv=1027&k=JgsnIlUw)
+![qq群二维码](https://tinymce-plugin.github.io/qq.png#pic_center)
 
+
+# 👍 贡献者列表
+---
+<a href="https://opencollective.com/tinymce-plugin/contributors.svg?width=890&button=false"><img src="https://opencollective.com/tinymce-plugin/contributors.svg?width=890&button=false" /></a>
 
 ---
