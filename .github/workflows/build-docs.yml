@@ -26,6 +26,7 @@ jobs:
           npm run build
       - name: Commit files
         run: |
+          cd ${{env.TP_FOLDER}}
           git config --local user.email "fivecc@qq.com"
           git config --local user.name "five"
           git add .
