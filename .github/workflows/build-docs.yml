@@ -29,9 +29,9 @@ jobs:
           git config --local user.name "five"
           git add .
           git commit -m "${{env.HEADCOMMITDATA}}"
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
+       - name: Deploy
+         uses: JamesIves/github-pages-deploy-action@4.1.4
+         with:
           token: ${{ secrets.TP_BUILD_ACCESS_TOKEN }}
           BRANCH: main
           commit-message: ${{ env.MESSAGEDATA }}
