@@ -5,9 +5,9 @@ on: [ push, delete, create ]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-        MESSAGEDATA: ${{ github.event.head_commit.message }}
     steps:
+      env:
+         MESSAGEDATA: ${{ github.event.head_commit.message }}
       - name: Checkout
         uses: actions/checkout@v2.3.1
         with:
@@ -23,15 +23,15 @@ jobs:
           npm install --legacy-peer-deps
           npm run build:site
           npm run build
-       - name: Commit files
+      - name: Commit files
         run: |
           git config --local user.email "fivecc@qq.com"
           git config --local user.name "five"
           git add .
           git commit -m "${{env.HEADCOMMITDATA}}"
-       - name: Deploy
-         uses: JamesIves/github-pages-deploy-action@4.1.4
-         with:
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
           token: ${{ secrets.TP_BUILD_ACCESS_TOKEN }}
           BRANCH: main
           commit-message: ${{ env.MESSAGEDATA }}
