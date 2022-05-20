@@ -24,13 +24,6 @@ jobs:
           npm install --legacy-peer-deps
           npm run build:site
           npm run build
-      - name: Commit files
-        run: |
-          cd ${{env.TP_FOLDER}}
-          git config --local user.email "fivecc@qq.com"
-          git config --local user.name "five"
-          git add .
-          git commit -m "${{env.MESSAGEDATA}}"
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
