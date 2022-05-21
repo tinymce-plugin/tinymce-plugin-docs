@@ -6,6 +6,7 @@ jobs:
   build-and-deploy:
     env:
        MESSAGEDATA: ${{ github.event.head_commit.message }}
+       TPMODE: ${{secrets.TP_MODE}}
     runs-on: ubuntu-latest
     steps:
     
