@@ -17,7 +17,7 @@ tinymce.init({
 })
 ```
 使用效果
-![skeletonScreen](assets/images/skt-demo.png?100%)
+![skeletonScreen](/assets/images/skt-demo.png?100%)
 
 ---
 title: 基础样例
