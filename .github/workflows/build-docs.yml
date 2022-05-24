@@ -7,8 +7,8 @@ jobs:
     env:
        MESSAGEDATA: ${{ github.event.head_commit.message }}
        TPMODE: ${{secrets.TP_MODE}}
-       TP_ALGOLIA: {{secrets.TP_ALGOLIA}}
-       TP_CONFIG: {{secrets.TP_CONFIG}}
+       TP_ALGOLIA: ${secrets.TP_ALGOLIA}}
+       TP_CONFIG: ${{secrets.TP_CONFIG}}
     runs-on: ubuntu-latest
     steps:
     
