@@ -353,6 +353,94 @@ import { Editor } from '@tinymce/tinymce-react';
 ````
 ::::
 
+:::::details 点击查看 tinymce-box用法
+````md
+::::tinymce-box
+:::html
+```html
+<textarea id='basic-example'>
+  <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128" /></p>
+  <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+
+  <h2>Got questions or need help?</h2>
+
+  <ul>
+    <li>Our <a href="https://www.tiny.cloud/docs/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+    <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
+    <li>We also offer enterprise grade support as part of <a href="https://www.tiny.cloud/pricing">TinyMCE premium plans</a>.</li>
+  </ul>
+
+  <h2>A simple table to play with</h2>
+
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Cost</th>
+        <th>Really?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TinyMCE</td>
+        <td>Free</td>
+        <td>YES!</td>
+      </tr>
+      <tr>
+        <td>Plupload</td>
+        <td>Free</td>
+        <td>YES!</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Found a bug?</h2>
+
+  <p>
+    If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.
+  </p>
+
+  <h2>Finally ...</h2>
+
+  <p>
+    Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.
+  </p>
+  <p>
+    Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.
+  </p>
+</textarea>
+
+```
+:::
+:::js
+```js
+tinymce.init({
+  selector: 'textarea#basic-example',
+  height: 500,
+  menubar: false,
+  skeletonScreen: true,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
+```
+:::css
+```css
+#basic-example{
+    color: #333;
+}
+```
+:::
+::::
+````
+:::::
 <demoGroup>
  <demoGroupItem title=" Javascript ">
 
@@ -667,7 +755,8 @@ import { Editor } from '@tinymce/tinymce-react';
      class ReactDemo extends React.Component{
        constructor(props) {
            super(props);
-           this.state = { reactDemoInitialValue: "<p>这是一个REactDemo</p>"};
+           this.state = { reactDemoInitialValue: ""};
+           this.InitialValue = "<p>这是一个REactDemo</p>"
            this.reactDemoInit = {
                     min_height: 220,
                     base_url:'/tinymce',
@@ -688,7 +777,7 @@ import { Editor } from '@tinymce/tinymce-react';
            <div>
             <h1>tinymce demo2</h1>
             <div>
-            <Editor initialValue={this.state.reactDemoInitialValue} init={this.reactDemoInit} onEditorChange={this.handleChange} />
+            <Editor initialValue={this.InitialValue} init={this.reactDemoInit} onEditorChange={this.handleChange} />
             </div>
             <div dangerouslySetInnerHTML={{__html: this.state.reactDemoInitialValue }} ></div>
           </div>
@@ -928,8 +1017,8 @@ import { Editor } from '@tinymce/tinymce-react';
 import tinymce from "tinymce";
 import "tinymce-plugin";
 import TinymceVue from "/@/assets/lib/TinymceVue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/index";
+import "tinymce-plugin/plugins/tpImportword/index";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
@@ -951,6 +1040,7 @@ data(){
 }
 </script>
 ```
+
 :::
 
 
@@ -1009,9 +1099,11 @@ import { Editor } from '@tinymce/tinymce-react';
      class ReactDemo extends React.Component{
        constructor(props) {
            super(props);
-           this.state = { reactDemoInitialValue: "<p>这是一个REactDemo</p>"};
+           this.state = { reactDemoInitialValue: ""};
+           this.InitialValue = "<p>这是一个REactDemo</p>"
            this.reactDemoInit = {
                     min_height: 220,
+                    max_height: 500,
                     base_url:'/tinymce',
                     branding: false,
                     language:'zh_CN',
@@ -1022,7 +1114,7 @@ import { Editor } from '@tinymce/tinymce-react';
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
              };
        this.handleChange = (data)=>{
-              this.setState({reactDemoInitialValue: data})
+             this.setState({reactDemoInitialValue: data})
         }
       }
       render(){
@@ -1030,7 +1122,7 @@ import { Editor } from '@tinymce/tinymce-react';
            <div>
             <h1>tinymce demo2</h1>
             <div>
-            <Editor initialValue={this.state.reactDemoInitialValue} init={this.reactDemoInit} onEditorChange={this.handleChange} />
+            <Editor initialValue={this.InitialValue} init={this.reactDemoInit} onEditorChange={this.handleChange} />
             </div>
             <div dangerouslySetInnerHTML={{__html: this.state.reactDemoInitialValue }} ></div>
           </div>
@@ -1042,3 +1134,52 @@ import { Editor } from '@tinymce/tinymce-react';
 </script>
 ```
 :::
+
+::::tinymce-box
+:::html
+```html
+<textarea id='basic-example'>
+  <h1><strong>👋 Welcome !</strong></h1>
+  <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="/thinymce-pluginIcon.png" alt="TinyMCE Logo" width="128"  /></p>
+  <p>欢迎来到 <a href="https://github.com/tinymce-plugin" target="_blank"><strong><code class="fv-code_inline">Tinymce-plugin</code></strong></a></p><p>这是一个专注 提供 <strong>强大、好用、丰富</strong> 的 <a href="https://www.tiny.cloud" target="_blank"><code class="fv-code_inline">tinymce</code></a> 富文本编辑器 <strong>插件</strong>、<strong>扩展</strong> 和 <strong>技术</strong> 的技术社区，方便 <strong>交流讨论</strong>，<strong>分享经验</strong> 。</p><p>本社区有多个不错的插件或者项目，欢迎 Star ⭐ 关注~</p>
+  <h1> ✨Tinymce-plugin</h1>
+  <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
+</textarea>
+
+```
+:::
+:::js
+```js
+tinymce.init({
+  selector: 'textarea#basic-example',
+  height: 500,
+  menubar: false,
+  skeletonScreen: true,
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help wordcount'
+  ],
+   images_upload_handler: function (blobInfo, succFun, failFun) {
+                    var file = blobInfo.blob();
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                     succFun(e.target.result)
+                    }
+                   reader.readAsDataURL(file)
+  },
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent | ' +
+  'removeformat | help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
+```
+:::css
+```css
+#basic-example{
+    color: #333;
+}
+```
+:::
+::::
