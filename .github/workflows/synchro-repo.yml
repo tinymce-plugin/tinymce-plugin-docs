@@ -1,6 +1,8 @@
 name:  synchro-repo
-
-on: [ push, delete, create ]
+  
+  push:
+    branches:
+      - main
 
 jobs:
   deployment:
