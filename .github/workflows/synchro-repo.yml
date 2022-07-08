@@ -1,9 +1,8 @@
 name:  synchro-repo
-  
+on:
   push:
     branches:
       - main
-
 jobs:
   deployment:
     runs-on: ubuntu-latest
