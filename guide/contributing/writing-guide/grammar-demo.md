@@ -56,7 +56,7 @@
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
 export default{
@@ -99,11 +99,11 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tinymce from "tinymce";
 import "tinymce-plugin";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
@@ -230,7 +230,7 @@ import { Editor } from '@tinymce/tinymce-react';
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
 export default{
@@ -275,11 +275,11 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tinymce from "tinymce";
 import "tinymce-plugin";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
@@ -668,7 +668,7 @@ tinymce.init({
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
+import TinymceVue from "@tinymce/tinymce-vue";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
 export default{
@@ -711,11 +711,11 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tinymce from "tinymce";
 import "tinymce-plugin";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
@@ -1016,7 +1016,7 @@ import { Editor } from '@tinymce/tinymce-react';
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
 export default{
@@ -1026,7 +1026,6 @@ data(){
     return {
         content: 'dsdsdssfdddddddddddddddddddsd',
         tinymceOptions:{
-                // custom_elements: 'tp-collapse',
                 min_height: 200,
                 max_height: 700,
                 skeletonScreen: true,
@@ -1062,7 +1061,7 @@ import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
 import "tinymce-plugin";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },

@@ -72,3 +72,120 @@ title: 前言
 <a href="https://opencollective.com/tinymce-plugin/contributors.svg?width=890&button=false"><img src="https://opencollective.com/tinymce-plugin/contributors.svg?width=890&button=false" /></a>
 
 ---
+
+
+
+::::tinymce-box
+:::html
+```html
+<textarea id='basic-example'>
+  <h1><strong>👋 Welcome !</strong></h1>
+  <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="/thinymce-pluginIcon.png" alt="TinyMCE Logo" width="128"  /></p>
+  <p>欢迎来到 <a href="https://github.com/tinymce-plugin" target="_blank"><strong><code class="fv-code_inline">Tinymce-plugin</code></strong></a></p><p>这是一个专注 提供 <strong>强大、好用、丰富</strong> 的 <a href="https://www.tiny.cloud" target="_blank"><code class="fv-code_inline">tinymce</code></a> 富文本编辑器 <strong>插件</strong>、<strong>扩展</strong> 和 <strong>技术</strong> 的技术社区，方便 <strong>交流讨论</strong>，<strong>分享经验</strong> 。</p><p>本社区有多个不错的插件或者项目，欢迎 Star ⭐ 关注~</p>
+  <h1> ✨Tinymce-plugin</h1>
+  <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
+  <p>
+    <span contenteditable="false" data-tp-logicflow="" data-tp-no-img="" data-mce-selected="1"><object style="width: 160px; height: 160px; transform: scale(1, 1);" data="/tpLogicflow.svg" data-mce-style="width: 556px; height: 260px; transform: scale(1, 1);"></object></span>
+  </p>
+</textarea>
+
+```
+:::
+:::js
+```js
+tinymce.init({
+  selector: 'textarea#basic-example',
+  height: 790,
+  max_height:790,
+  language: 'zh_CN',
+  tp_i18n_langs:true,
+  base_url:'/tinymce',
+  skeletonScreen: true,
+  menubar: 'file edit  insert view format table tools help mymenubar',
+  menu: {
+          mymenubar: {title: 'I18n', items: 'tpI18n' },
+      },
+  plugins: [
+    'advlist autolink lists link image charmap print preview anchor',
+    'searchreplace visualblocks code fullscreen',
+    'insertdatetime media table paste code help tpIndent2em tpLetterspacing tpImportword tpLogicflow tpLayout tpLineheight  wordcount'
+  ],
+   images_upload_handler: function (blobInfo, succFun, failFun) {
+     var file = blobInfo.blob();
+        if (!file.name) file.name = 'vue-' + Date.now() + Math.floor(Math.random() * 1000) + '.png';
+       var DOMURL = window.URL || window.webkitURL || window;
+       succFun(DOMURL.createObjectURL(file))
+  },
+  setup(props) {
+   
+  },
+  toolbar: 'undo redo | formatselect | ' +
+  'bold italic backcolor | alignleft aligncenter ' +
+  'alignright alignjustify | bullist numlist outdent indent tpLayout tpIndent2em tpLineheight tpLetterspacing | tpImportword tpLogicflow | ' +
+  'removeformat  image media | help',
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+});
+```
+:::css
+```css
+#basic-example{
+    color: #333;
+}
+```
+:::
+::::
+
+
+:::tinymce-vue3
+
+```vue
+<template>
+<div>
+ <h1>插件demo展示区域</h1>
+  <div class="vueDemo">
+    <tinymce-vue v-model="content" :init="tinymceOptions" ></tinymce-vue>
+  </div>
+  <div  v-html="content"></div>
+</div>
+</template>
+
+<script>
+import tinymce from "tinymce";
+import "tinymce-plugin";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
+import "tinymce-plugin/plugins/tpIndent2em";
+import "tinymce-plugin/plugins/tpLayout";
+import "tinymce-plugin/plugins/tpLineheight";
+import "tinymce-plugin/plugins/tpLetterspacing";
+import "tinymce-plugin/plugins/tpImportword"; 
+export default{
+name: 'domeVue3',
+components: { TinymceVue },
+data(){
+    return {
+        content: '欢迎来到 Tinymce-plugin',
+        tinymceOptions:{
+                // custom_elements: 'tp-collapse',
+                min_height: 200,
+                max_height: 700,
+                skeletonScreen: true,
+                menubar: false,
+                base_url:'/tinymce',
+                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpLineheight tpLetterspacing tpImportword tpLogicflow preview',
+                toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons  tpLayout tpLineheight tpLetterspacing tpImportword tpLogicflow | Preview'],
+                images_upload_handler: function (blobInfo, succFun, failFun) {
+                var file = blobInfo.blob();
+                      if (!file.name) file.name = 'vue-' + Date.now() + Math.floor(Math.random() * 1000) + '.png';
+                    var DOMURL = window.URL || window.webkitURL || window;
+                    succFun(DOMURL.createObjectURL(file))
+                }
+             
+        }
+    }
+  }
+}
+</script>
+```
+:::
+
+更多例子见[参与贡献](/contributing/writing-guide/grammar-demo.html)
