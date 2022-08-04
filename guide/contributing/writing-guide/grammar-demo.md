@@ -830,7 +830,7 @@ import { Editor } from '@tinymce/tinymce-react';
   </style>
 </head>
 
-<body tp-page-height="498">
+<body tp-page-height="478">
       <div class="demo">
         <div id="tinymce-app">
             <div class="tinymce-demo" style="color: #000;">
@@ -1057,7 +1057,6 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
 import "tinymce-plugin";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
