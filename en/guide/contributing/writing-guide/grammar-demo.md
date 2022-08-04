@@ -668,7 +668,7 @@ tinymce.init({
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "@tinymce/tinymce-vue";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 import "tinymce-plugin/plugins/tpIndent2em";
 import "tinymce-plugin/plugins/tpImportword";
 export default{
