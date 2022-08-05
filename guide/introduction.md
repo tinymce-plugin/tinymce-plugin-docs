@@ -85,7 +85,7 @@ title: 前言
   <h1> ✨Tinymce-plugin</h1>
   <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
   <p>
-    <span contenteditable="false" data-tp-logicflow="" data-tp-no-img="" data-mce-selected="1"><object style="width: 160px; height: 160px; transform: scale(1, 1);" data="/tpLogicflow.svg" data-mce-style="width: 556px; height: 260px; transform: scale(1, 1);"></object></span>
+    <span contenteditable="false" data-tp-logicflow="" data-tp-no-img="" data-mce-selected="1"><object style="width: 160px; height: 160px; transform: scale(1, 1);" data="/tpLogicFlow.svg" data-mce-style="width: 556px; height: 260px; transform: scale(1, 1);"></object></span>
   </p>
 </textarea>
 
