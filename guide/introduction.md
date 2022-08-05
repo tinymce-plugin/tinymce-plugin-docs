@@ -11,6 +11,7 @@ title: 前言
 > 本社区有多个不错的插件或者项目，欢迎 Star ⭐ 关注~
 >
 
+**测试中**
 
 
 # ✨Tinymce-plugin
@@ -153,11 +154,11 @@ tinymce.init({
 import tinymce from "tinymce";
 import "tinymce-plugin";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpLayout";
-import "tinymce-plugin/plugins/tpLineheight";
-import "tinymce-plugin/plugins/tpLetterspacing";
-import "tinymce-plugin/plugins/tpImportword"; 
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpLayout/plugin.js";
+import "tinymce-plugin/plugins/tpLineheight/plugin.js";
+import "tinymce-plugin/plugins/tpLetterspacing/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js"; 
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
