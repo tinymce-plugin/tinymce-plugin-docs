@@ -231,14 +231,14 @@ import { Editor } from '@tinymce/tinymce-react';
 import tinymce from "tinymce";
 import "tinymce-plugin";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
 data(){
     return {
-        content: 'dsdsdssfdddddddddddddddddddsd',
+        content: 'tinymce-plugin',
         tinymceOptions:{
                 // custom_elements: 'tp-collapse',
                 min_height: 200,
@@ -277,15 +277,15 @@ data(){
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
 data(){
     return {
-        content: 'fivesdsdsd',
+        content: 'five',
         tinymceOptions:{
                 min_height: 200,
                 max_height: 700,
@@ -315,8 +315,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -669,14 +669,14 @@ tinymce.init({
 import tinymce from "tinymce";
 import "tinymce-plugin";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
 data(){
     return {
-        content: 'dsdsdssfdddddddddddddddddddsd',
+        content: 'Tinymce-Plugin',
         tinymceOptions:{
                 // custom_elements: 'tp-collapse',
                 min_height: 200,
@@ -713,8 +713,8 @@ data(){
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
@@ -749,8 +749,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -1017,20 +1017,20 @@ import { Editor } from '@tinymce/tinymce-react';
 import tinymce from "tinymce";
 import "tinymce-plugin";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
 data(){
     return {
-        content: 'dsdsdssfdddddddddddddddddddsd',
+        content: 'Tinymce-Plugin',
         tinymceOptions:{
                 min_height: 200,
                 max_height: 700,
                 skeletonScreen: true,
                 base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
+                plugins: 'code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
                 toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
              
         }
@@ -1058,15 +1058,15 @@ data(){
 
 <script>
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
 data(){
     return {
-        content: 'fivesdsdsd',
+        content: 'Tinymce-plugin',
         tinymceOptions:{
                 min_height: 200,
                 max_height: 700,
@@ -1090,8 +1090,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -1139,7 +1139,7 @@ import { Editor } from '@tinymce/tinymce-react';
   <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="/thinymce-pluginIcon.png" alt="TinyMCE Logo" width="128"  /></p>
   <p>欢迎来到 <a href="https://github.com/tinymce-plugin" target="_blank"><strong><code class="fv-code_inline">Tinymce-plugin</code></strong></a></p><p>这是一个专注 提供 <strong>强大、好用、丰富</strong> 的 <a href="https://www.tiny.cloud" target="_blank"><code class="fv-code_inline">tinymce</code></a> 富文本编辑器 <strong>插件</strong>、<strong>扩展</strong> 和 <strong>技术</strong> 的技术社区，方便 <strong>交流讨论</strong>，<strong>分享经验</strong> 。</p><p>本社区有多个不错的插件或者项目，欢迎 Star ⭐ 关注~</p>
   <h1> ✨Tinymce-plugin</h1>
-  <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
+  <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
 </textarea>
 
 ```
