@@ -8,11 +8,11 @@
 ### CDN
 
 ```html
-<script src="https://unpkg.com/tinymce-plugin"></script>
+<script src="https://unpkg.com/tinymce-plugin@next"></script>
 ```
 或
 ```html
-<script src="https://unpkg.com/@npkg/tinymce-plugin"></script>
+<script src="https://unpkg.com/@npkg/tinymce-plugin@next"></script>
 ```
 
 
@@ -22,13 +22,13 @@
  <codeGroupItem title="NPM" active>
 
 ```sh
-npm i tinymce-plugin 或 npm i @npkg/tinymce-plugin 
+npm i tinymce-plugin@next 或 npm i @npkg/tinymce-plugin@next 
 ```
 </codeGroupItem>
 <codeGroupItem title="YARN">
 
 ```sh
-yarn add tinymce-plugin -D 或 yarn add @npkg/tinymce-plugin -D
+yarn add tinymce-plugin@next -D 或 yarn add @npkg/tinymce-plugin@next -D
 ```
 </codeGroupItem>
 </codeGroup>
@@ -38,7 +38,7 @@ yarn add tinymce-plugin -D 或 yarn add @npkg/tinymce-plugin -D
 
 ### 自行下载
 
-这些文件可以在 [*_**unpkg**_*](https://unpkg.com/browse/tinymce-plugin/) 或者[*_**jsDelivr**_*](https://cdn.jsdelivr.net/npm/tinymce-plugin/)  这些 CDN 上浏览和下载,自行存放
+这些文件可以在 [*_**unpkg**_*](https://unpkg.com/browse/tinymce-plugin@next/) 或者[*_**jsDelivr**_*](https://cdn.jsdelivr.net/npm/tinymce-plugin@next/)  这些 CDN 上浏览和下载,自行存放
 
 ## 使用
 
@@ -47,7 +47,7 @@ yarn add tinymce-plugin -D 或 yarn add @npkg/tinymce-plugin -D
 - 没有构建工具
 
 ```html
-<script src="https://unpkg.com/@npkg/tinymce-plugin"></script>
+<script src="https://unpkg.com/@npkg/tinymce-plugin@next"></script>
 ```
 - 使用构建工具
 
@@ -75,14 +75,14 @@ tinymce.init({
 
 ```js
 import "tinymce-plugin"; //作为一些插件的必要依赖
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpLayout";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpLayout/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 ```
 或
 ```js
 import "@npkg/tinymce-plugin"; //作为一些插件的必要依赖
-import "@npkg/tinymce-plugin/plugins/tpIndent2em";
-import "@npkg/tinymce-plugin/plugins/tpLayout";
-import "@npkg/tinymce-plugin/plugins/tpImportword";
+import "@npkg/tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "@npkg/tinymce-plugin/plugins/tpLayout/plugin.js";
+import "@npkg/tinymce-plugin/plugins/tpImportword/plugin.js";
 ```

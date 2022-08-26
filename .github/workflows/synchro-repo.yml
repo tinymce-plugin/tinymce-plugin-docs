@@ -2,7 +2,7 @@ name:  synchro-repo
 on:
   push:
     branches:
-      - main
+      - v6
 jobs:
   deployment:
     runs-on: ubuntu-latest
@@ -18,7 +18,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
+          BRANCH: v6
           commit-message: ${{ env.MESSAGEDATA }}
           folder: .
           repository-name: 'Five-great/tinymce-plugin-docs'
