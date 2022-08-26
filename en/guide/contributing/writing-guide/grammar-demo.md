@@ -1,6 +1,5 @@
 ## 实例 Demo 语法
 ---
-
 ::::details 点击查看demo组用法
 
 ````md {3,38,81,125}
@@ -19,8 +18,8 @@
   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
   <!-- <script src='./api/api.js'></script> -->
   
-  <script src='https://tinymce-plugin.gitee.io/tinymce/tinymce.js'></script><!-- 必要 -->
-  <script src='https://unpkg.com/tinymce-plugin'></script><!-- 必要 -->
+  <script src='/tinymce/tinymce.js'></script><!-- 必要 -->
+  <script src='/tinymce/tinymce-plugin.js'></script><!-- 必要 -->
 </head>
 
 <body tp-page-height="498">
@@ -56,9 +55,9 @@
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
@@ -70,7 +69,7 @@ data(){
                 min_height: 200,
                 max_height: 700,
                 skeletonScreen: true,
-                base_url:'/tinymce',
+                base_url:'/v6/tinymce',
                 plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
                 toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
              
@@ -99,11 +98,11 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
@@ -113,7 +112,7 @@ data(){
         tinymceOptions:{
                 min_height: 200,
                 max_height: 700,
-                base_url:'/tinymce',
+                base_url:'/v6/tinymce',
                 plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image preview',
                 toolbar: ['code tpIndent2em tpCollapse tpTabs tpButtons Preview'],
                 skeletonScreen: true,
@@ -137,8 +136,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -146,7 +145,7 @@ import { Editor } from '@tinymce/tinymce-react';
          super(props);
            this.reactDemoInit = {
                     min_height: 220,
-                    base_url:'/tinymce',
+                    base_url:'/v6/tinymce',
                     branding: false,
                     language:'zh_CN',
                     menubar: false,
@@ -190,8 +189,8 @@ import { Editor } from '@tinymce/tinymce-react';
   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
   <!-- <script src='./api/api.js'></script> -->
   
-  <script src='https://tinymce-plugin.gitee.io/tinymce/tinymce.js'></script><!-- 必要 -->
-  <script src='https://unpkg.com/tinymce-plugin'></script><!-- 必要 -->
+  <script src='/v6/tinymce/tinymce.js'></script><!-- 必要 -->
+  <script src='/v6/tinymce/tinymce-plugin'></script><!-- 必要 -->
 </head>
 
 <body tp-page-height="498">
@@ -230,9 +229,9 @@ import { Editor } from '@tinymce/tinymce-react';
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
@@ -244,7 +243,7 @@ data(){
                 min_height: 200,
                 max_height: 700,
                 skeletonScreen: true,
-                base_url:'/tinymce',
+                base_url:'/v6/tinymce',
                 plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
                 toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
              
@@ -275,11 +274,11 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
+import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
@@ -289,7 +288,7 @@ data(){
         tinymceOptions:{
                 min_height: 200,
                 max_height: 700,
-                base_url:'/tinymce',
+                base_url:'/v6/tinymce',
                 plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image preview',
                 toolbar: ['code tpIndent2em tpCollapse tpTabs tpButtons Preview'],
                 skeletonScreen: true,
@@ -315,8 +314,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -324,7 +323,7 @@ import { Editor } from '@tinymce/tinymce-react';
          super(props);
            this.reactDemoInit = {
                     min_height: 220,
-                    base_url:'/tinymce',
+                    base_url:'/v6/tinymce',
                     branding: false,
                     language:'zh_CN',
                     menubar: false,
@@ -442,6 +441,51 @@ tinymce.init({
 ````
 :::::
 
+:::tinymce-vue3
+```vue
+<template>
+<div>
+ <h1>插件demo展示区域</h1>
+  <div class="vueDemo">
+    <tinymce-vue v-model="content" :init="tinymceOptions" ></tinymce-vue>
+  </div>
+  <div  v-html="content"></div>
+</div>
+</template>
+
+<script>
+
+import tinymce from "tinymce";
+import "tinymce-plugin";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+export default{
+name: 'domeVue3',
+components: { TinymceVue },
+data(){
+    return {
+        content: 'dsdsdssfdddddddddddddddddddsd',
+        tinymceOptions:{
+                // custom_elements: 'tp-collapse',
+                min_height: 200,
+                max_height: 700,
+                skeletonScreen: true,
+                base_url:'/v6/tinymce',
+                external_plugins:{
+                  tpImportword: '/v6/tinymce/tpImportword/plugin.js',
+                },
+                plugins: ' code   autoresize tpCollapse tpTabs tpButtons  preview',
+                toolbar: ['|code tpIndent2em tpImportword | Preview'],
+             
+        }
+    }
+  }
+}
+</script>
+```
+
+:::
+
 <demoGroup>
  <demoGroupItem title=" Javascript ">
 
@@ -457,8 +501,8 @@ tinymce.init({
   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
   <!-- <script src='./api/api.js'></script> -->
   
-  <script src='/tinymce/tinymce.js'></script><!-- 必要 -->
-  <script src='/tinymce/tinymce-plugin.js'></script><!-- 必要 -->
+  <script src='/v6/tinymce/tinymce.js'></script><!-- 必要 -->
+  <script src='/v6/tinymce/tinymce-plugin.js'></script> <!--必要 -->
 
   <style>
     body{max-width: 1920px;width: 100%; margin: 0 auto;}
@@ -482,6 +526,7 @@ tinymce.init({
 
 <body tp-page-height="498">
       <div class="demo">
+         <button onclick="savefun()">sdsd</button>
         <div id="tinymce-app">
             <div class="tinymce-demo" style="color: #000;">
                 <div class="tinymce-cnt" id="mytextarea">
@@ -499,7 +544,9 @@ tinymce.init({
       </div>
   <script>
     function savefun(){
-      $("#showID").html(tinymceConfig.getHtml())
+      // $("#showID").html(tinymceConfig.getHtml())
+        $("#showID").html(tinymce.activeEditor.getContent())
+      console.log(tinymce.activeEditor.getContent());
     }
 
                 var xhrOnProgress = function (fun) {
@@ -530,7 +577,7 @@ tinymce.init({
                  min_height:400,
                  max_height: 700,
                 //  baseURL: './'
-                 plugins: ' print  axupimgs clearhtml  preview insertdatetime  attachment  searchreplace visualblocks autolink  layout fullscreen toc image upfile link media code codesample table charmap hr pagebreak  anchor advlist lists textpattern help emoticons autosave bdmap indent2em   axupimgs   letterspacing imagetools quickbars attachment wordcount autoresize  importword tpCollapse tpTabs tpButtons',
+                 plugins: '      preview insertdatetime  attachment  searchreplace visualblocks autolink   fullscreen  image  link media code codesample table charmap  pagebreak  anchor advlist lists  help emoticons      tpIndent2em  tpImportword    autoresize   tpCollapse tpTabs tpButtons',
                  toolbar_groups: {
                          formatting: {
                              text: '文字格式',
@@ -543,7 +590,7 @@ tinymce.init({
                              items: 'alignleft aligncenter alignright alignjustify',
                          }
                   },
-                 toolbar: ['|code formatselect fontselect fontsizeselect forecolor backcolor bold italic underline strikethrough  link alignment indent2em outdent  indent lineheight letterspacing bullist numlist blockquote subscript superscript layout removeformat table image  axupimgs media upfile attachment  emoticons importword charmap  hr pagebreak  clearhtml  tpImportword codesample visualblocks insertdatetime  bdmap  quickbars  toc cut copy undo redo ltr rtl tpCollapse tpTabs tpButtons restoredraft  searchreplace fullscreen  help wordcount preview'],
+                 toolbar: ['|code formatselect fontselect fontsizeselect forecolor backcolor bold italic underline strikethrough  link alignment bullist numlist blockquote subscript superscript  removeformat table image  media    emoticons     pagebreak    tpImportword codesample visualblocks insertdatetime    quickbars   cut copy undo redo ltr rtl tpCollapse tpTabs tpButtons restoredraft  searchreplace fullscreen tpIndent2em  help wordcount preview'],
                  table_style_by_css: true,
                  OperationManualHtml: '',
                  CommonProblemHtml: '',
@@ -563,14 +610,14 @@ tinymce.init({
                  font_formats: '微软雅黑=Microsoft YaHei,Helvetica Neue,PingFang SC,sans-serif;苹果苹方=PingFang SC,Microsoft YaHei,sans-serif;宋体=simsun,serif;仿宋体=FangSong,serif;黑体=SimHei,sans-serif;Arial=arial,helvetica,sans-serif;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats;',
                  images_upload_base_path: '',
                
-                 images_upload_handler: function (blobInfo, succFun, failFun) {
-                    var file = blobInfo.blob();
+                 images_upload_handler: (blobInfo, progress) => new Promise((resolve, reject)=>{
+                     var file = blobInfo.blob();
                     var reader = new FileReader();
-                    reader.onload = function(e){
-                     succFun(e.target.result)
-                    }
+                        reader.onload = function(e){
+                        resolve(e.target.result)
+                        }
                    reader.readAsDataURL(file)
-                 },
+                 }),
                  file_picker_callback: function (succFun, value, meta) { //自定义文件上传函数 
                     var filetype = '.pdf, .txt, .zip, .rar, .7z, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .mp3, .mp4';
                     var input = document.createElement('input');
@@ -611,7 +658,7 @@ tinymce.init({
                     $.ajax({
                         data: data,
                         type: 'GET',
-                        url: '/tinymce/api/file.json',
+                        url: '/v6/tinymce/api/file.json',
                         cache: false,
                         contentType: false,
                         processData: false,
@@ -631,7 +678,7 @@ tinymce.init({
                  },
                  tp_attachment_max_size: 5009715200,
                 //  attachment_style: '.attachment>img{display:inline-block!important;max-width:30px!important;}',
-                 tp_attachment_assets_path: '/tinymce/plugins/attachment/icons',
+                 tp_attachment_assets_path: '/v6/tinymce/plugins/attachment/icons',
                 
               
                  init_instance_callback: function(editor){
@@ -641,7 +688,8 @@ tinymce.init({
                   //    editor.focus();
                  }
           }).then(function(res){
-                 tinymce.feedBackIframeUrl ='/tinymce/plugins/help/docBox.html'; //反馈链接
+          
+                 tinymce.feedBackIframeUrl ='/v6/tinymce/plugins/help/docBox.html'; //反馈链接
              });
   </script>
 </body>
@@ -668,9 +716,9 @@ tinymce.init({
 <script>
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 export default{
 name: 'domeVue3',
 components: { TinymceVue },
@@ -682,8 +730,8 @@ data(){
                 min_height: 200,
                 max_height: 700,
                 skeletonScreen: true,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
+                base_url:'/v6/tinymce',
+                plugins: ' code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
                 toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
              
         }
@@ -711,11 +759,10 @@ data(){
 </template>
 
 <script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
+import TinymceVue from "@tinymce-plugin/tinymce-vue";
 export default{
 name: 'domeVue2',
 components: { TinymceVue },
@@ -725,8 +772,8 @@ data(){
         tinymceOptions:{
                 min_height: 200,
                 max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image preview',
+                base_url:'/v6/tinymce',
+                plugins: ' code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image preview',
                 toolbar: ['code tpIndent2em tpCollapse tpTabs tpButtons Preview'],
                 skeletonScreen: true,
              
@@ -749,8 +796,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import tinymce from "tinymce";
 import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
+import "tinymce-plugin/plugins/tpIndent2em/plugin.js";
+import "tinymce-plugin/plugins/tpImportword/plugin.js";
 import { Editor } from '@tinymce/tinymce-react';
 
      class ReactDemo extends React.Component{
@@ -759,12 +806,12 @@ import { Editor } from '@tinymce/tinymce-react';
            this.state = { reactDemoInitialValue: "<p>这是一个REactDemo</p>"};
            this.reactDemoInit = {
                     min_height: 220,
-                    base_url:'/tinymce',
+                    base_url:'/v6/tinymce',
                     branding: false,
                     language:'zh_CN',
                     menubar: false,
                     skeletonScreen: true,
-                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen tpIndent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount tpImportword'],
+                    plugins: 'advlist autolink lists link image charmap  preview anchor searchreplace visualblocks code fullscreen tpIndent2em autoresize tpCollapse tpTabs tpButtons insertdatetime media table code help wordcount tpImportword',
                     toolbar: 'undo redo tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
              };
@@ -807,8 +854,8 @@ import { Editor } from '@tinymce/tinymce-react';
   <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
   <!-- <script src='./api/api.js'></script> -->
   
-  <script src='/tinymce/tinymce.js'></script><!-- 必要 -->
-  <script src='/tinymce/tinymce-plugin.js'></script><!-- 必要 -->
+  <script src='/v6/tinymce/tinymce.js'></script><!-- 必要 -->
+  <script src='/v6/tinymce/tinymce-plugin.js'></script> <!--必要 -->
 
   <style>
     body{max-width: 1920px;width: 100%; margin: 0 auto;}
@@ -832,6 +879,7 @@ import { Editor } from '@tinymce/tinymce-react';
 
 <body tp-page-height="498">
       <div class="demo">
+        <button onclick="savefun()">sdsd</button>
         <div id="tinymce-app">
             <div class="tinymce-demo" style="color: #000;">
                 <div class="tinymce-cnt" id="mytextarea">
@@ -845,11 +893,13 @@ import { Editor } from '@tinymce/tinymce-react';
                   <style> #fvContentID a{display:inline-block!important} #fvContentID .attachment>img{display:inline-block!important;max-width:30px!important;min-width:30px!important;}#fvContentID .attachment>a{display:contents!important;}</style>
                 </div>
             </div>
+            <div id="showID" > </div>
         </div>
       </div>
   <script>
     function savefun(){
-      $("#showID").html(tinymceConfig.getHtml())
+      $("#showID").html(tinymce.activeEditor.getContent())
+      console.log(tinymce.activeEditor.getContent());
     }
 
                 var xhrOnProgress = function (fun) {
@@ -880,7 +930,7 @@ import { Editor } from '@tinymce/tinymce-react';
                  min_height:400,
                  max_height: 700,
                 //  baseURL: './'
-                 plugins: ' print  axupimgs clearhtml  preview insertdatetime  attachment  searchreplace visualblocks autolink  layout fullscreen toc image upfile link media code codesample table charmap hr pagebreak  anchor advlist lists textpattern help emoticons autosave bdmap indent2em   axupimgs   letterspacing imagetools quickbars attachment wordcount autoresize  importword tpCollapse tpTabs tpButtons',
+                 plugins: '      preview insertdatetime  attachment  searchreplace visualblocks autolink   fullscreen  image  link media code codesample table charmap  pagebreak  anchor advlist lists  help emoticons      tpIndent2em  tpImportword    autoresize   tpCollapse tpTabs tpButtons',
                  toolbar_groups: {
                          formatting: {
                              text: '文字格式',
@@ -893,7 +943,7 @@ import { Editor } from '@tinymce/tinymce-react';
                              items: 'alignleft aligncenter alignright alignjustify',
                          }
                   },
-                 toolbar: ['|code formatselect fontselect fontsizeselect forecolor backcolor bold italic underline strikethrough  link alignment indent2em outdent  indent lineheight letterspacing bullist numlist blockquote subscript superscript layout removeformat table image  axupimgs media upfile attachment  emoticons importword charmap  hr pagebreak  clearhtml  tpImportword codesample visualblocks insertdatetime  bdmap  quickbars  toc cut copy undo redo ltr rtl tpCollapse tpTabs tpButtons restoredraft  searchreplace fullscreen  help wordcount preview'],
+                 toolbar: ['|code formatselect fontselect fontsizeselect forecolor backcolor bold italic underline strikethrough  link alignment bullist numlist blockquote subscript superscript  removeformat table image  media    emoticons     pagebreak    tpImportword codesample visualblocks insertdatetime    quickbars   cut copy undo redo ltr rtl tpCollapse tpTabs tpButtons restoredraft  searchreplace fullscreen tpIndent2em  help wordcount preview'],
                  table_style_by_css: true,
                  OperationManualHtml: '',
                  CommonProblemHtml: '',
@@ -913,14 +963,14 @@ import { Editor } from '@tinymce/tinymce-react';
                  font_formats: '微软雅黑=Microsoft YaHei,Helvetica Neue,PingFang SC,sans-serif;苹果苹方=PingFang SC,Microsoft YaHei,sans-serif;宋体=simsun,serif;仿宋体=FangSong,serif;黑体=SimHei,sans-serif;Arial=arial,helvetica,sans-serif;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats;',
                  images_upload_base_path: '',
                
-                 images_upload_handler: function (blobInfo, succFun, failFun) {
-                    var file = blobInfo.blob();
+                 images_upload_handler: (blobInfo, progress) => new Promise((resolve, reject)=>{
+                     var file = blobInfo.blob();
                     var reader = new FileReader();
-                    reader.onload = function(e){
-                     succFun(e.target.result)
-                    }
+                        reader.onload = function(e){
+                        resolve(e.target.result)
+                        }
                    reader.readAsDataURL(file)
-                 },
+                 }),
                  file_picker_callback: function (succFun, value, meta) { //自定义文件上传函数 
                     var filetype = '.pdf, .txt, .zip, .rar, .7z, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .mp3, .mp4';
                     var input = document.createElement('input');
@@ -961,7 +1011,7 @@ import { Editor } from '@tinymce/tinymce-react';
                     $.ajax({
                         data: data,
                         type: 'GET',
-                        url: '/tinymce/api/file.json',
+                        url: '/v6/tinymce/api/file.json',
                         cache: false,
                         contentType: false,
                         processData: false,
@@ -981,7 +1031,7 @@ import { Editor } from '@tinymce/tinymce-react';
                  },
                  tp_attachment_max_size: 5009715200,
                 //  attachment_style: '.attachment>img{display:inline-block!important;max-width:30px!important;}',
-                 tp_attachment_assets_path: '/tinymce/plugins/attachment/icons',
+                 tp_attachment_assets_path: '/v6/tinymce/plugins/attachment/icons',
                 
               
                  init_instance_callback: function(editor){
@@ -991,7 +1041,8 @@ import { Editor } from '@tinymce/tinymce-react';
                   //    editor.focus();
                  }
           }).then(function(res){
-                 tinymce.feedBackIframeUrl ='/tinymce/plugins/help/docBox.html'; //反馈链接
+          
+                 tinymce.feedBackIframeUrl ='/v6/tinymce/plugins/help/docBox.html'; //反馈链接
              });
   </script>
 </body>
@@ -1000,138 +1051,7 @@ import { Editor } from '@tinymce/tinymce-react';
 ```
 :::
 
-:::tinymce-vue3
 
-```vue
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :init="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div  v-html="content"></div>
-</div>
-</template>
-
-<script>
-import tinymce from "tinymce";
-import "tinymce-plugin";
-import TinymceVue from "/@/assets/lib/TinymceVue";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
-export default{
-name: 'domeVue3',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'dsdsdssfdddddddddddddddddddsd',
-        tinymceOptions:{
-                // custom_elements: 'tp-collapse',
-                min_height: 200,
-                max_height: 700,
-                skeletonScreen: true,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword preview',
-                toolbar: ['|code tpIndent2em tpCollapse tpTabs tpButtons tpImportword | Preview'],
-             
-        }
-    }
-  }
-}
-</script>
-```
-
-:::
-
-
-
-:::tinymce-vue2
-```vue
-<template>
-<div>
- <h1>插件demo展示区域</h1>
-  <div class="vueDemo">
-    <tinymce-vue v-model="content" :init="tinymceOptions" ></tinymce-vue>
-  </div>
-  <div v-html="content"></div>
-</div>
-</template>
-
-<script>
-import tinymce from "/@/assets/lib/tinymce-vue/tinymce";
-import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
-import TinymceVue from "/@/example/vueDemo/Tinymce-vue2.vue";
-export default{
-name: 'domeVue2',
-components: { TinymceVue },
-data(){
-    return {
-        content: 'fivesdsdsd',
-        tinymceOptions:{
-                min_height: 200,
-                max_height: 700,
-                base_url:'/tinymce',
-                plugins: 'tp code  tpIndent2em autoresize tpCollapse tpTabs tpButtons image preview',
-                toolbar: ['code tpIndent2em tpCollapse tpTabs tpButtons Preview'],
-                skeletonScreen: true,
-             
-        }
-    }
-  }
-}
-</script>
-```
-:::
-
-:::tinymce-react
-```html
-<script>
-import React from 'react';
-import ReactDOM from 'react-dom';
-import tinymce from "tinymce";
-import "tinymce-plugin";
-import "tinymce-plugin/plugins/tpIndent2em";
-import "tinymce-plugin/plugins/tpImportword";
-import { Editor } from '@tinymce/tinymce-react';
-
-     class ReactDemo extends React.Component{
-       constructor(props) {
-           super(props);
-           this.state = { reactDemoInitialValue: "<p>这是一个REactDemo</p>"};
-           this.reactDemoInit = {
-                    min_height: 220,
-                    base_url:'/tinymce',
-                    branding: false,
-                    language:'zh_CN',
-                    menubar: false,
-                    skeletonScreen: true,
-                    plugins: ['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen tpIndent2em autoresize tpCollapse tpTabs tpButtons', 'insertdatetime media table paste code help wordcount tpImportword'],
-                    toolbar: 'undo redo tpIndent2em autoresize tpCollapse tpTabs tpButtons tpImportword | formatselect image | ' + 'bold italic backcolor | alignleft aligncenter ' + 'alignright alignjustify | bullist numlist outdent indent | ' + 'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-             };
-       this.handleChange = (data)=>{
-              this.setState({reactDemoInitialValue: data})
-        }
-      }
-      render(){
-        return (
-           <div>
-            <h1>tinymce demo2</h1>
-            <div>
-            <Editor initialValue={this.state.reactDemoInitialValue} init={this.reactDemoInit} onEditorChange={this.handleChange} />
-            </div>
-            <div dangerouslySetInnerHTML={{__html: this.state.reactDemoInitialValue }} ></div>
-          </div>
-          );
-      }
-    }
-
-   ReactDOM.render(<ReactDemo />, document.getElementById('ReactRootID'));
-</script>
-```
-:::
 
 ::::tinymce-box
 :::html
@@ -1141,7 +1061,7 @@ import { Editor } from '@tinymce/tinymce-react';
   <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="/thinymce-pluginIcon.png" alt="TinyMCE Logo" width="128"  /></p>
   <p>欢迎来到 <a href="https://github.com/tinymce-plugin" target="_blank"><strong><code class="fv-code_inline">Tinymce-plugin</code></strong></a></p><p>这是一个专注 提供 <strong>强大、好用、丰富</strong> 的 <a href="https://www.tiny.cloud" target="_blank"><code class="fv-code_inline">tinymce</code></a> 富文本编辑器 <strong>插件</strong>、<strong>扩展</strong> 和 <strong>技术</strong> 的技术社区，方便 <strong>交流讨论</strong>，<strong>分享经验</strong> 。</p><p>本社区有多个不错的插件或者项目，欢迎 Star ⭐ 关注~</p>
   <h1> ✨Tinymce-plugin</h1>
-  <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-5.2.0~5.x.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
+  <p><a href="https://github.com/tinymce-plugin" target="_blank"><img src="https://tinymce-plugin.github.io/badge.svg" alt="tinymce-plugin"></a>&nbsp; <a href="https://www.npmjs.com/package/tinymce-plugin" target="_blank"><img src="https://img.shields.io/npm/v/tinymce-plugin.svg" alt="release candidate"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/badge/tinymce-6.x-green.svg" alt="tinymce Version"></a>&nbsp; <a href="https://github.com/tinymce-plugin/tinymce-plugin/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/tinymce-plugin/tp-indent2em.svg" alt="GitHub license"></a>&nbsp; <a href="https://www.tiny.cloud" target="_blank"><img src="https://img.shields.io/npm/dm/tinymce-plugin" alt="tinymce Version"></a></p>
 </textarea>
 
 ```
@@ -1153,11 +1073,7 @@ tinymce.init({
   height: 500,
   menubar: false,
   skeletonScreen: true,
-  plugins: [
-    'advlist autolink lists link image charmap print preview anchor',
-    'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste code help wordcount'
-  ],
+  plugins: 'link image searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
    images_upload_handler: function (blobInfo, succFun, failFun) {
                     var file = blobInfo.blob();
                     var reader = new FileReader();
