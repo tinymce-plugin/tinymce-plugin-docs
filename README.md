@@ -43,7 +43,7 @@
 - 欢迎加入 [*_**`qq交流群 143085779`**_*](https://jq.qq.com/?_wv=1027&k=JgsnIlUw)
 ![qq群二维码](https://tinymce-plugin.github.io/qq.png#pic_center)
 
-
+[*_**CSDN 社区**_*](http://t.csdn.cn/kPcOh)
 # 👍 贡献者列表
 <a href="https://opencollective.com/tinymce-plugin/contributors.svg?width=890&button=false"><img src="https://opencollective.com/tinymce-plugin/contributors.svg?width=890&button=false" /></a>
 
